@@ -10,7 +10,7 @@ exports.addStudent = (req, res, next) => {
     studentNo: req.body.studentNo,
     firstName: req.body.firstName,
     lastName: req.body.lastName,
-    class: req.body.class,
+    studentClass: req.body.studentClass,
   });
 
   student
@@ -18,7 +18,7 @@ exports.addStudent = (req, res, next) => {
     .then((result) => {
       res.status(201).json(result);
     })
-    .catch((e) => throwError(e));
+    .catch((e) => console.log(e));
 };
 
 // (GET) retrieve all students
@@ -28,10 +28,4 @@ exports.getStudents = (req, res, next) => {
       res.status(200).json(docs);
     })
     .catch((e) => throwError(e));
-};
-
-// Error function
-throwError = (e) => {
-  console.log(e);
-  res.status(500).json({ error: e });
 };

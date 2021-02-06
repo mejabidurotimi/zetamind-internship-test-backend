@@ -8,7 +8,7 @@ const StudentsController = require("../controllers/students");
 // (POST) save a new student to the database
 router.post("/", StudentsController.addStudent);
 
-// (GET) retrieve all complaints from the database
+// (GET) retrieve all students from the database
 router.get("/", StudentsController.getStudents);
 
 module.exports = router;
